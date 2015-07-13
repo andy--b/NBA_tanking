@@ -3,6 +3,7 @@
 import os
 import requests
 import shutil
+import time
 
 # Thank god for Selenium
 import selenium.webdriver as webdriver
@@ -45,7 +46,7 @@ def download_data(team_info):
 	
 	# Save the window opener (current window, do not mistaken with tab... not the same)
 	main_window = browser.current_window_handle
-	
+	browser.get('https://www.google.com')
 	# Loop for each team, each year
 	for team in team_info:
 		# Create subfolder for each team within the OUTPUT_PATH folder
@@ -59,6 +60,10 @@ def download_data(team_info):
 			+ str(team[0]) + '/' + str(year) + '_games.html'
 			
 			print("Now reading", url)
+			
+			# After experiencing a few errors, found that adding a half second pause
+			# Stops problems with reading web page
+			time.sleep(.5)
 			
 			#### These next 15 or so lines were done with SERIOUS help from StackOverflow
 			#### I've lost the page, but if I find it again I will attribute credit here.
@@ -82,6 +87,8 @@ def download_data(team_info):
 			old_location = DOWNLOADS_FOLDER + file_name
 			new_location = team_path + file_name
 			
+			# Half a second allotted for file download. Increase as needed
+			time.sleep(.5)
 			shutil.move(old_location, new_location)
 			
 	# Close browser at end of entire operation

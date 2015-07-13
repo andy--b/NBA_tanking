@@ -9,7 +9,7 @@ from selenium import webdriver
 
 from selenium.webdriver.firefox.webdriver import FirefoxProfile
 
-def getURLinfo(teams, years):
+def download_data(teams, years):
 # Takes a list of teams and list of year values and downloads game records for those teams/years
 	
 	# Set firefox to open with my profile
@@ -43,5 +43,5 @@ def getURLinfo(teams, years):
 
 	# driver.close()
 	
-getURLinfo(['CLE','CHI'],[1995,2006])
+download_data(['CLE','CHI'],[1995,2006])
 

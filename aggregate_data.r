@@ -16,7 +16,7 @@ aggr_data = data.frame(team = character(0), year = integer(0),
 mid_games = integer(0), mid_wins = integer(0), mid_losses = integer(0), 
 mid_percent = numeric(0), expected_wins = numeric(0), total_wins = integer(0), 
 total_losses = integer(0), total_percent = numeric(0), 
-actual_v_expected = numeric(0), stringsAsFactors = F );
+actual_v_expected = numeric(0), has_pick = character(0), stringsAsFactors = F);
  
 # Create counting variable for aggr_data
 iter = 1
@@ -29,13 +29,13 @@ for(te in 1:length(team)) {
 		# Calculate midseason wins, percentage, expected wins, 
 		# total wins, total percentage, diff
 		this_team_data = game_data[[this_team]];
-		midseason_games = this_team_data[nrow(this_team_data) - cutoff,'G'];
-		midseason_wins = this_team_data[nrow(this_team_data) - cutoff,'W'];
-		midseason_losses = this_team_data[nrow(this_team_data) - cutoff,'L'];
+		midseason_games = this_team_data[(nrow(this_team_data) - cutoff),'G'];
+		midseason_wins = this_team_data[(nrow(this_team_data) - cutoff),'W'];
+		midseason_losses = this_team_data[(nrow(this_team_data) - cutoff),'L'];
 		midseason_percent = midseason_wins / (midseason_losses + midseason_wins);
 		expected_wins = midseason_wins + (midseason_percent * cutoff)
-		total_wins = midseason_wins = this_team_data[nrow(this_team_data),'W'];
-		total_losses = midseason_wins = this_team_data[nrow(this_team_data),'L'];
+		total_wins = this_team_data[nrow(this_team_data),'W'];
+		total_losses = this_team_data[nrow(this_team_data),'L'];
 		total_percent = total_wins / (total_losses + total_wins);
 		actual_v_expected = total_wins - expected_wins
 		
@@ -60,5 +60,8 @@ for(te in 1:length(team)) {
 	}
 	te = te + 1;
 }
+
+# Sort data frame by year and mid season wins
+aggr_data = aggr_data[order(aggr_data[,"year"],-aggr_data[,"mid_wins"]),]
 
 print("Reading complete.")

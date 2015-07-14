@@ -25,15 +25,21 @@ for(te in 1:length(team)) {
 		"/teams_", team[te], "_", as.character(y), "_games_teams_games.csv",
 		sep = '')
 		nam = paste(team[te], as.character(y), sep = '_');
+		
 		# Clean up data a little bit. Remove useless/blank columns, get headers right
-		raw_team_data = read.csv(path, header = T);
-		raw_team_data = droplevels(raw_team_data);
+		# Read as.is, so we don't get factors/levels in our data
+		raw_team_data = read.csv(path, header = T, as.is = T);
 		
 		# Every 21st line in the file (21,42,etc) has headers. remove these
 		number_headers = as.integer(nrow(raw_team_data)/21);
 		header_lines = c(1:number_headers) * 21
 		raw_team_data = raw_team_data[-header_lines,]
 		
+		# Since we read as.is, we need to convert numerical columns
+		for (i in c("G","Tm","Opp","W","L"))
+			{raw_team_data[,i] = as.integer(raw_team_data[,i]);}
+		
+		# team_data 
 		team_data = raw_team_data[,c("G","Date","Opponent","Tm","Opp","W","L","Streak")];
 		print(paste("Now Reading:", path));
 		game_data[[nam]] = team_data;

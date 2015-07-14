@@ -232,9 +232,4 @@ draft_trades = function(aggr_data) {
 	aggr_data[aggr_data[,'team'] == 'LAC' & aggr_data[,'year'] == 2015, 'has_pick'] = 'N'
 	# pels rockets 18
 	# rockets lakers 27
-	
-	
-	
-	
-
 	}

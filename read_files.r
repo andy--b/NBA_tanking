@@ -1,6 +1,6 @@
 #### Andy Bowling
 #### Take our downloaded/sorted NBA game data files and put them into
-#### a single list in R.
+#### a single list in R called game_data.
 
 
 # Read csv which has 3 columns

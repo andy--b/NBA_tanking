@@ -60,7 +60,7 @@ aggregate_data = function(input_data,cutoff) {
 			aggr_data[iter,'expected_wins'] = expected_wins;
 			aggr_data[iter,'total_wins'] = total_wins;
 			aggr_data[iter,'total_losses'] = total_losses;
-			aggr_data[iter,'total_percent'] = total_wins; 
+			aggr_data[iter,'total_percent'] = total_percent; 
 			aggr_data[iter,'actual_v_expected'] = actual_v_expected;
 			
 			print(paste("Now Reading:", this_team));

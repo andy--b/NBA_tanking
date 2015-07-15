@@ -49,7 +49,9 @@ source('loser_data.r');
 
 ###################### Step 2: Regression modeling #############################
 
-# Create a regression model testing a few factors. 
+# Create a regression model testing actual_v_expected wins based on midseason win percent and
+# whether or not team has possesion of own 1st round pick
+model_1 = lm(aggr_data[,'actual_v_expected'] ~ aggr_data[,'mid_percent']+ factor(aggr_data[,'has_pick']))
 
 
 

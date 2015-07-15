@@ -11,11 +11,11 @@
 #### IF RUNNING main.r, LEAVE THE FOLLOWING IN COMMENTS
 # Specify where the cut off point is. Number is games from end of season.
 # e.g. In an 82 game season, cutoff = 28 would take record after 54 games
-cutoff = 28
+# cutoff = 28
 
 # Read csv that has team names and year ranges, or pass through list from
 # read_files function in read_files.r
-input_data = read.csv("C:/Projects/NBA/teams_formatted.csv", header = F);
+# input_data = read.csv("C:/Projects/NBA/teams_formatted.csv", header = F);
 
 aggregate_data = function(input_data,cutoff) {
 
@@ -27,11 +27,12 @@ aggregate_data = function(input_data,cutoff) {
 	# Initialize data_frame
 	aggr_data = data.frame(team = character(0), year = integer(0), 
 	mid_games = integer(0), mid_wins = integer(0), mid_losses = integer(0), 
-	mid_percent = numeric(0), midseason_rank = numeric(0), 
+	mid_percent = numeric(0), mid_rank = numeric(0), 
 	expected_wins = numeric(0), total_wins = integer(0), 
 	total_losses = integer(0), total_percent = numeric(0), 
 	total_rank = integer(0), rank_change = integer(0), 
-	actual_v_expected = numeric(0), has_pick = character(0), stringsAsFactors = F);
+	actual_v_expected = numeric(0), has_pick = character(0),
+	mid_group = character(0), stringsAsFactors = F);
 	 
 	# Create counting variable for aggr_data
 	iter = 1
@@ -90,11 +91,11 @@ aggregate_data = function(input_data,cutoff) {
 	# Add column for midseason rank
 	for (y in min(aggr_data[,'year']) : max(aggr_data[,'year'])) {
 	this_year = seq(1,nrow(aggr_data[aggr_data[,'year'] == y,]));
-	aggr_data[aggr_data[,'year'] == y,'midseason_rank'] = this_year;
+	aggr_data[aggr_data[,'year'] == y,'mid_rank'] = this_year;
 	}
 	
-	# Fill in column rank_change_change, which is total_rank - midseason_rank
-	aggr_data[,'rank_change'] = aggr_data[,'total_rank'] - aggr_data[,'midseason_rank'];
+	# Fill in column rank_change_change, which is total_rank - mid_rank
+	aggr_data[,'rank_change'] = aggr_data[,'total_rank'] - aggr_data[,'mid_rank'];
 	
 	print("Reading complete.");
 	return(aggr_data);

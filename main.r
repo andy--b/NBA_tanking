@@ -6,7 +6,7 @@
 ################### SET THE FOLLOWING BEFORE RUNNING #####################
 
 # Path where your R files live
-setwd = 'c:/projects/nba';
+setwd('c:/projects/nba');
 
 # Read csv that has team names and year ranges, or pass through list from
 # read_files function in read_files.r
@@ -41,9 +41,7 @@ source('read_files.r');
 source('aggregate_data.r');
 # Fill in info for has_pick column in aggr_data
 source('draft_trades.r');
-# Create table for winning teams
-source('winner_data.r');
-# Create table for losing teams
+# Update column for winning/losing teams at cutoff point
 source('loser_data.r');
 
 

@@ -8,14 +8,14 @@
 #### And 'actual_v_expected', which extrapolates total wins from midseason wins.
 
 
-#### SPECIFY THESE BEFORE RUNNING SCRIPT
+#### IF RUNNING main.r, LEAVE THE FOLLOWING IN COMMENTS
 # Specify where the cut off point is. Number is games from end of season.
 # e.g. In an 82 game season, cutoff = 28 would take record after 54 games
-cutoff = 28
+# cutoff = 28
 
 # Read csv that has team names and year ranges, or pass through list from
 # read_files function in read_files.r
-input_data = read.csv("C:/Projects/NBA/teams_formatted.csv", header = F);
+# input_data = read.csv("C:/Projects/NBA/teams_formatted.csv", header = F);
 
 aggregate_data = function(input_data,cutoff) {
 

@@ -5,12 +5,12 @@
 #### a single list in R called game_data.
 
 
-## SET THIS PATH BEFORE RUNNING
+############### IF RUNNING main.r, LEAVE input_data IN COMMENTS ###############
 # Read csv which has 3 columns
 # First column has team abbrev
 # 2nd has start year
 # 3rd has end year
-input_data = read.csv("C:/Projects/NBA/teams_formatted.csv", header = F);
+# input_data = read.csv("C:/Projects/NBA/teams_formatted.csv", header = F);
 
 read_files = function(input_data){
 	# We're storing all of our tables in a single list for easy referencing.

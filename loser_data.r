@@ -6,21 +6,20 @@
 
 
 
-#### SET THESE BEFORE RUNNING FUNCTION
+############## IF RUNNING main.r, LEAVE THE FOLLOWING IN COMMENTS #############
 # Specify "worse than x wins from position y" criteria
 # e.g. number_of_wins = 4 and from position = 22
 # would return teams at MOST 4 wins ahead of the 22nd best team
 # at the midpoint of the season. For "from last place",
 # use negative values. e.g. -2 references the 2nd worst team. 0 is invalid.
-#
 # WARNING: Make sure you provide legal value for ALL seasons.
 # If you use "30" or "-30" in a year with 29 teams, you'll get an error
-number_of_wins = 6;
-from_this_place = -5;
+# number_of_wins = 6;
+# from_this_place = -5;
 
 # Specify start and end year
-start_year = 1990;
-end_year = 2015;
+# start_year = 1990;
+# end_year = 2015;
 
 loser_data_fn = function(number_of_wins,from_this_place,start_year,end_year) {
 	

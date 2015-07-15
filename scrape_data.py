@@ -18,7 +18,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
 from selenium.webdriver.firefox.webdriver import FirefoxProfile
 
-####### SET THE FOLLOWING VARIABLES PRIOR TO RUNNING THE PROGRAM
+###################### SET THE FOLLOWING PRIOR TO RUNNING #####################
 
 # Specify your Firefox profile path here. It is crucial that this profile downloads
 # csv's AUTOMATICALLY upon clicking without a dialog box.
@@ -29,7 +29,7 @@ profile = FirefoxProfile\
 # Input data should be formatted as so:
 # 1st column: 3 letter team abbreviation used on b-r.com
 # 2nd and 3rd cols: 4 digit start and end years, respectively
-INPUT_DATA="C:/Projects/NBA/teams_formatted.csv" 
+input_data="C:/Projects/NBA/teams_formatted.csv" 
 
 # Choose directory where the whole mess of team data will be stored
 # Individual subfolders will be created for each team
@@ -37,6 +37,8 @@ OUTPUT_PATH="C:/Projects/NBA/game_data/"
 
 # Where do files download to on this computer?
 DOWNLOADS_FOLDER = 'C:/Users/Andy/Downloads/'
+
+##############################################################################
 
 
 def download_data(team_info):
@@ -103,7 +105,7 @@ def download_data(team_info):
 	
 	return None
 	
-with open(INPUT_DATA) as csvfile:
+with open(input_data) as csvfile:
 	# read csv file
 	a = csvfile.readlines()
 	

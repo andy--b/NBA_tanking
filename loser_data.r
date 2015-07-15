@@ -52,13 +52,16 @@ loser_data_fn = function(number_of_wins,from_this_place,start_year,end_year) {
 		losers = data_for_year[data_for_year[,"mid_wins"] <= maximum_wins,];
 		rows_to_append = nrow(losers);
 		
-		# Append losers to loser_data
-		for (i in 1:nrow(losers)) {
-			loser_data[iter,] = losers[i,];
-			
-			# increment
-			i = i + 1;
-			iter = iter + 1;
+		# Make sure we have any rows to append for this year
+		if (rows_to_append > 0) {
+			# Append losers to loser_data
+			for (i in 1:nrow(losers)) {
+				loser_data[iter,] = losers[i,];
+				
+				# increment
+				i = i + 1;
+				iter = iter + 1;
+				}
 			}
 		}	
 	# print message upon completion

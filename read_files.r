@@ -57,6 +57,3 @@ read_files = function(input_data){
 	
 	return(game_data);
 	}
-
-# Run function with team/start year/end year input data
-game_data = read_files(input_data);

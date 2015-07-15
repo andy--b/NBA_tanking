@@ -59,5 +59,3 @@ loser_data_fn = function(aggr_data, number_of_wins, from_this_place) {
 	# return aggr_data
 	return(aggr_data);	
 	}
-	
-aggr_data = loser_data_fn(aggr_data, number_of_wins,from_this_place);

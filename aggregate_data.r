@@ -100,5 +100,3 @@ aggregate_data = function(input_data,cutoff) {
 	print("Reading complete.");
 	return(aggr_data);
 	}
-	
-aggr_data = aggregate_data(input_data,cutoff);

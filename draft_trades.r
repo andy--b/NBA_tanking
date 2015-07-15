@@ -238,5 +238,3 @@ draft_trades = function(aggr_data) {
 	print("Table Updated");
 	return(aggr_data);
 	}
-
-aggr_data = draft_trades(aggr_data);

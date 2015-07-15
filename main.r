@@ -37,12 +37,19 @@ par(ask = TRUE);
 
 # Read files
 source('read_files.r');
+game_data = read_files(input_data);
+
 # Aggregate data by team by season
 source('aggregate_data.r');
+aggr_data = aggregate_data(input_data,cutoff);
+
 # Fill in info for has_pick column in aggr_data
 source('draft_trades.r');
+aggr_data = draft_trades(aggr_data);
+
 # Update column for winning/losing teams at cutoff point
 source('loser_data.r');
+aggr_data = loser_data_fn(aggr_data, number_of_wins,from_this_place);
 
 
 ###################### Step 2: Regression modeling #############################

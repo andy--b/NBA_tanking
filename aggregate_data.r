@@ -1,4 +1,6 @@
 #### Andy Bowling
+#### Tanking and the NBA: A statistical analysis
+#### July 2015
 #### Takes list created in read.files.r and returns
 #### a single data.frame with all teams for all years
 #### Includes total w/l/percent, midpoint w/l/percent

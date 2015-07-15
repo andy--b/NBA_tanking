@@ -1,4 +1,6 @@
 #### Andy Bowling
+#### Tanking and the NBA: A statistical analysis
+#### July 2015
 #### Modify aggregate_data table to indicate if team had their draft pick
 #### Manually pulled draft trade data from prosportstransactions.com
 
@@ -232,6 +234,9 @@ draft_trades = function(aggr_data) {
 	aggr_data[aggr_data[,'team'] == 'LAC' & aggr_data[,'year'] == 2015, 'has_pick'] = 'N';
 	# pels rockets 18
 	# rockets lakers 27
+	
+	print("Table Updated");
+	return(aggr_data);
 	}
 
-draft_trades();
+aggr_data = draft_trades(aggr_data);

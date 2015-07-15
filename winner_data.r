@@ -1,4 +1,6 @@
 #### Andy Bowling
+#### Tanking and the NBA: A statistical analysis
+#### July 2015
 #### Takes data.frame from aggregate_data.r and selects only the
 #### winners based on certain criteria
 
@@ -13,8 +15,8 @@
 #
 # WARNING: Make sure you provide legal value for ALL seasons.
 # If you use "30" or "-30" in a year with 29 teams, you'll get an error
-number_of_wins = 10;
-from_this_place = -3;
+number_of_wins = 6;
+from_this_place = -5;
 
 # Specify start and end year
 start_year = 1990;

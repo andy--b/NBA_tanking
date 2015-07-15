@@ -1,3 +1,9 @@
+#### Andy Bowling
+#### Tanking and the NBA: A statistical analysis
+#### July 2015
+#### This file scrapes data from basketball-reference.com and stores
+#### files in an organized hierarchy.
+
 #! python3
 
 import os
@@ -14,7 +20,8 @@ from selenium.webdriver.firefox.webdriver import FirefoxProfile
 
 ####### SET THE FOLLOWING VARIABLES PRIOR TO RUNNING THE PROGRAM
 
-# Specify your Firefox profile path here
+# Specify your Firefox profile path here. It is crucial that this profile downloads
+# csv's AUTOMATICALLY upon clicking without a dialog box.
 profile = FirefoxProfile\
 	("C:/Users/Andy/AppData/Roaming/Mozilla/Firefox/Profiles/cix7hlum.default")
 

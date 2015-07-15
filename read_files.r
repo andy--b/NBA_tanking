@@ -1,4 +1,6 @@
 #### Andy Bowling
+#### Tanking and the NBA: A statistical analysis
+#### July 2015
 #### Take our downloaded/sorted NBA game data files and put them into
 #### a single list in R called game_data.
 
